@@ -4,6 +4,11 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+/Assets/StreamingAssets*
+Assets/FMODStudioCache.asset
+Assets/StreamingAssets/*.bank
+fmod.log
+fmod_editor.log
 
 # Visual Studio cache directory
 .vs/
@@ -35,3 +40,43 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+fmod.log
+fmod_editor.log
+fmod.log
+Assets/Resources/FMODStudioSettings.asset
+Assets/FMODStudioCache.asset
+Assets/FMOD_Package/StreamingAssets.meta
+Assets/Resources/FMODStudioSettings.*
+Assets/FMODStudioCache.asset
+fmod.log
+mod_editor.log
+
+Assets/StreamingAssets/SFX.bank.meta
+
+Assets/StreamingAssets/Master Bank.strings.bank.meta
+
+Assets/StreamingAssets/Master Bank.bank.meta
+
+Assets/StreamingAssets/Character.bank.meta
+
+Assets/01_Code/NPCs_Scripts/Level1.meta
+Assets/Resources/FMODStudioSettings.asset
+Assets/FMODStudioCache.asset
+
+fmod.log
+
+Assets/FMODStudioCache.asset
+Assets/FMODStudioCache.asset.meta
+
+
+
+
+Assets/Master Bank.bytes
+Assets/Master Bank.bytes.meta
+Assets/Master Bank.strings.bytes
+Assets/Master Bank.strings.bytes.meta
+Assets/Resources/FMODStudioSettings.asset
+Assets/SFX.bytes
+Assets/SFX.bytes.meta
+Assets/Resources/FMODStudioSettings.asset
+
