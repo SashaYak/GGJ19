@@ -17,7 +17,7 @@ MonoBehaviour:
   EditorEvents: []
   MasterBankRef: {fileID: 114219782130565998}
   StringsBankRef: {fileID: 114747130254036922}
-  stringsBankWriteTime: 636840320711268916
+  stringsBankWriteTime: 636840346315765485
   cacheVersion: 2
 --- !u!114 &114219782130565998
 MonoBehaviour:
@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636840320711199150
+  lastModified: 636840346315715623
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636840320711268916
+  lastModified: 636840346315765485
   LoadResult: 0
   FileSizes:
   - Name: Desktop
