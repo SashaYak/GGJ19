@@ -24,7 +24,7 @@ namespace FMODUnity
                 }
                 if (isQuitting)
                 {
-                    throw new Exception("FMOD Studio attempted access by script to RuntimeManager while application is quitting");
+                 //   throw new Exception("FMOD Studio attempted access by script to RuntimeManager while application is quitting");
                 }
 
                 if (instance == null)
