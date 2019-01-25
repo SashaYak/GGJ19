@@ -62,11 +62,11 @@ Library/**
 /Assets/AssetStoreTools*
 /Assets/StreamingAssets*
 
-Assets/Resources/FMODStudioSettings.*
-fmod_editor.log
-fmod.log
-Assets/FMODStudioCache.asset
-Assets/FMODStudioCache.asset.meta
+/Assets/Resources/FMODStudioSettings.*
+/fmod_editor.log
+/fmod.log
+/Assets/FMODStudioCache.asset*
+
 
 
 # Visual Studio 2015 cache directory
