@@ -18,8 +18,13 @@ public class PlayerCollidor : MonoBehaviour {
 		
 	}
 
-    public void OnTriggerEnter(Collider other) {
-        BaseCollectible collectible = other.GetComponent<BaseCollectible>();
+    private void OnCollisionExit(Collision collision) {
+        
+    }
+
+    protected virtual void OnCollisionEnter(Collision collision) {
+        Debug.Log(collision);
+        BaseCollectible collectible = collision.gameObject.GetComponent<BaseCollectible>();
         if (collectible!=null) {
             HitCollectible(collectible);
         }

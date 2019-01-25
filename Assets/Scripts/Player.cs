@@ -73,6 +73,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         HandleInput();
+        HandleMovement();
         HandleRotation();
 	}
 
@@ -83,7 +84,6 @@ public class Player : MonoBehaviour {
 
     void HandleInput() {
         CalculateMovement();
-        HandleMovement();
         CalculateRotation();
     }
 
