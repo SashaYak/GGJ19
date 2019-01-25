@@ -1747,6 +1747,8 @@ GameObject:
   m_Component:
   - component: {fileID: 859076747}
   - component: {fileID: 859076748}
+  - component: {fileID: 859076750}
+  - component: {fileID: 859076749}
   m_Layer: 5
   m_Name: Ranking
   m_TagString: Untagged
@@ -1798,6 +1800,40 @@ MonoBehaviour:
   badColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   goodColor: {r: 1, g: 1, b: 1, a: 1}
   rankColor: {r: 0.8018868, g: 0.39716092, b: 0.7318278, a: 1}
+--- !u!114 &859076749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859076746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &859076750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859076746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &937757496
 GameObject:
   m_ObjectHideFlags: 0

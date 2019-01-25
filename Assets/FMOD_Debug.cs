@@ -25,13 +25,19 @@ public static class FMOD_Debug  {
     {     
             FMOD.Studio.EventDescription ed;
             RuntimeManager.StudioSystem.getEvent(eventPath, out ed);
-            if (ed.isValid())
-            {
-                return true;
-            }
-            else return false;        
+        if (ed.isValid())
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log("FMOD Debug " + eventPath + " doesn't exist");
+            return false;
+            
+        }
     }
 }
+
 
 
 
