@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23369051506896372}
   - component: {fileID: 114832051385743248}
   - component: {fileID: 135201520278036234}
+  - component: {fileID: 114826369280243288}
   m_Layer: 0
   m_Name: Tasse
   m_TagString: Untagged
@@ -115,6 +116,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733823575013776}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114826369280243288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733823575013776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114832051385743248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872ed1bd4d221d44eac7f69099f47458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoodModifier: 1
+  Type: 0
+  MoodModifier: 5
   TimeModifier: 2
   MovementAcceleration: 3
   MovementDeceleration: 2.5

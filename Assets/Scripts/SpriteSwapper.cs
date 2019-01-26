@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SpriteSwapper : MonoBehaviour {
@@ -12,6 +13,8 @@ public class SpriteSwapper : MonoBehaviour {
 
     public bool GoBack = true;
     public Sprite[] Sprites;
+
+    public AnimEvent[] Events;
 
     float currentTime = 0f;
     int direction = 1;
@@ -53,6 +56,19 @@ public class SpriteSwapper : MonoBehaviour {
                     TargetImage.sprite = Sprites[currentSprite];
                 }
             }
+            if (Events!=null && Events.Length>0) {
+                for (int i = 0; i < Events.Length; i++) {
+                    if (Events[i].Position==currentSprite) {
+                        Events[i].Event.Invoke();
+                    }
+                }
+            }
         }
 	}
+}
+
+[System.Serializable]
+public struct AnimEvent {
+    public int Position;
+    public UnityEvent Event;
 }

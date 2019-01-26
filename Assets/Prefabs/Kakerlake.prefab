@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 23878389100659860}
   - component: {fileID: 114903763926121166}
   - component: {fileID: 135296079106778664}
+  - component: {fileID: 114923584741100392}
   m_Layer: 0
   m_Name: Kakerlake
   m_TagString: Untagged
@@ -159,12 +160,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 212814195115658358}
+  TargetImage: {fileID: 0}
   timePerSprite: 0.1
   GoBack: 1
   Sprites:
   - {fileID: 21300000, guid: 0230ea03da97cc64b9f5ffb41079583d, type: 3}
   - {fileID: 21300000, guid: 8fdb5637c74c0904e9e68616ec55919c, type: 3}
   - {fileID: 21300000, guid: 1bdbc73bda21bb6468ca214bc1704bef, type: 3}
+  Events: []
 --- !u!114 &114652503378534152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd8367221da8e343bbb6ccd9e918366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoodModifier: 1
+  Type: 1
+  MoodModifier: 5
   TimeModifier: 2
   MovementAcceleration: 3
   MovementDeceleration: 2.5
@@ -202,6 +206,17 @@ MonoBehaviour:
   TargetPosition: {x: 0, y: 0, z: 0}
   Radius: 0.1
   TrySlide: 1
+--- !u!114 &114923584741100392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964405853239418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135296079106778664
 SphereCollider:
   m_ObjectHideFlags: 1

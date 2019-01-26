@@ -120,6 +120,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4960457468619028, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.83
@@ -152,15 +162,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114350490158092752, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
         type: 2}
-      propertyPath: Type
+      propertyPath: Events.Array.data[0].Event.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Position
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114350490158092752, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
         type: 2}
-      propertyPath: MoodModifier
-      value: 5
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 960546099}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FartSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706612152030182, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+        type: 2}
+      propertyPath: Events.Array.data[0].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
@@ -447,6 +483,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960546099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114215613983998260, guid: bbf428bb8acf06c4eba30fb5599c3f41,
+    type: 2}
+  m_PrefabInternal: {fileID: 85614360}
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
 --- !u!1001 &1292486322
 Prefab:
   m_ObjectHideFlags: 0
@@ -485,6 +527,11 @@ Prefab:
     - target: {fileID: 4115633500446554, guid: 3a7648ae26b9d364593be945824ea92d, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224101995679677958, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7648ae26b9d364593be945824ea92d, type: 2}
@@ -570,11 +617,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114832051385743248, guid: 65a9a9bad570dfa468f80c088a35e4f4,
-        type: 2}
-      propertyPath: MoodModifier
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
   m_IsPrefabAsset: 0
@@ -616,16 +658,6 @@ Prefab:
     - target: {fileID: 4156713742853624, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114903763926121166, guid: 058f3d46e72e5de43818cc68438359f0,
-        type: 2}
-      propertyPath: Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114903763926121166, guid: 058f3d46e72e5de43818cc68438359f0,
-        type: 2}
-      propertyPath: MoodModifier
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
