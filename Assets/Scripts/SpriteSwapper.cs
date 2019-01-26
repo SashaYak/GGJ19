@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpriteSwapper : MonoBehaviour {
 
     public SpriteRenderer Renderer;
+    public Image TargetImage;
 
     public float timePerSprite = 0.1f;
 
@@ -28,18 +30,28 @@ public class SpriteSwapper : MonoBehaviour {
         currentTime += Time.deltaTime;
         if (currentTime>timePerSprite) {
             currentTime = 0;
-            if (currentSprite+direction>=Sprites.Length || currentSprite+direction<=0) {
+            if (currentSprite+direction>=Sprites.Length || currentSprite+direction<0) {
                 if (GoBack) {
                     direction = -direction;
                     currentSprite = currentSprite + direction;
                 } else {
                     currentSprite = 0;
                 }
-                Renderer.sprite = Sprites[currentSprite];
+                if (Renderer!=null) {
+                    Renderer.sprite = Sprites[currentSprite];
+                }
+                if (TargetImage!=null) {
+                    TargetImage.sprite= Sprites[currentSprite];
+                }
 
             } else {
                 currentSprite = currentSprite + direction;
-                Renderer.sprite = Sprites[currentSprite];
+                if (Renderer != null) {
+                    Renderer.sprite = Sprites[currentSprite];
+                }
+                if (TargetImage != null) {
+                    TargetImage.sprite = Sprites[currentSprite];
+                }
             }
         }
 	}

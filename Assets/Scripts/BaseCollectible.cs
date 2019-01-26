@@ -6,7 +6,7 @@ public class BaseCollectible : MonoBehaviour {
 
     public CollectibleType Type;
 
-    public float MoodModifier = 1;
+    public int MoodModifier = 1;
     public float TimeModifier = 2f;
 
 
