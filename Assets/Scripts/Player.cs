@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
 
     public float Speed;
 
+    public Player_Fmod_Events PlayerSounds;
+
 
     Vector2 movementSpeed;
 
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour {
         set {
             movementSpeed = value;
             Speed = Mathf.Min(movementSpeed.magnitude / MaxMovementAcceleration,1);
+            PlayerSounds.SetIdleSound(Speed);
         }
     }
 
@@ -73,7 +76,10 @@ public class Player : MonoBehaviour {
         }
     }
 
+    bool canBumpSound = true;
+    float bumptTime = 0.2f;
 
+    bool canTurnSound=true;
 
     // Update is called once per frame
     void Update () {
@@ -141,13 +147,29 @@ public class Player : MonoBehaviour {
         }
         RotationSpeed = Mathf.Clamp(RotationSpeed, -MaxRotationAcceleration, MaxRotationAcceleration);
 
+        if (canTurnSound && Mathf.Abs(RotationSpeed)>0.4f*MaxRotationAcceleration) {
+            canTurnSound = false;
+            PlayerSounds.TurningSound();
+        } else if (!canTurnSound && Mathf.Abs(RotationSpeed) < 0.2f * MaxRotationAcceleration) {
+            canTurnSound = true;
+        }
     }
 
     void HandleMovement() {
         Vector3 newPossition= this.transform.position + new Vector3(MovementSpeed.x * Time.deltaTime, MovementSpeed.y * Time.deltaTime, 0);
         if (CheckMovement(newPossition)) {
             this.transform.position = newPossition;
+        } else {
+            if (canBumpSound) {
+                canBumpSound = false;
+                PlayerSounds.BumpSound(false);
+                Invoke("CanBumpAgain", bumptTime);
+            }
         }
+    }
+
+    void CanBumpAgain() {
+        canBumpSound = true;
     }
 
     // TODO Check if not going into walls

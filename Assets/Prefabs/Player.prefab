@@ -152,6 +152,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4090502011957086}
   - component: {fileID: 114195224353070424}
+  - component: {fileID: 114955265462088708}
+  - component: {fileID: 114843806470170376}
+  - component: {fileID: 114957339043795594}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -675,6 +678,8 @@ MonoBehaviour:
   RotationDeceleration: 150
   MaxRotationAcceleration: 150
   Radius: 1.5
+  Speed: 0
+  PlayerSounds: {fileID: 114957339043795594}
 --- !u!114 &114219006946840204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,6 +694,7 @@ MonoBehaviour:
   Player: {fileID: 114195224353070424}
   ColliderName: 0
   PlayerSign: -1
+  IsFish: 0
 --- !u!114 &114815488097872210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,6 +708,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 114195224353070424}
   ColliderName: 0
+--- !u!114 &114843806470170376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800283920012700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!114 &114950716978694480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,6 +733,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 114195224353070424}
   ColliderName: 0
+--- !u!114 &114955265462088708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800283920012700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
+--- !u!114 &114957339043795594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800283920012700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9484df7604bb354381a4fc381a30b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114969451682687770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,6 +780,7 @@ MonoBehaviour:
   Player: {fileID: 114195224353070424}
   ColliderName: 0
   PlayerSign: 1
+  IsFish: 1
 --- !u!212 &212864160589516226
 SpriteRenderer:
   m_ObjectHideFlags: 1

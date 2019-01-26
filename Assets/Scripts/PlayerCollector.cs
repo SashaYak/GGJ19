@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCollector : PlayerCollidor {
 
     public int PlayerSign = 1;
+    public bool IsFish = false;
 
 
     public override void HitCollectible(BaseCollectible collectible) {
@@ -12,5 +13,6 @@ public class PlayerCollector : PlayerCollidor {
         Player.Mood+=PlayerSign*collectible.MoodModifier;
         GameController.Instance.IncreaseTime(collectible.TimeModifier);
         collectible.Collect();
+        Player.PlayerSounds.CatchSound(IsFish);
     }
 }
