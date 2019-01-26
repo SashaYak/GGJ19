@@ -10,6 +10,7 @@ public class PlayerCollector : PlayerCollidor {
     public override void HitCollectible(BaseCollectible collectible) {
         Player.Collect(collectible);
         Player.Mood+=PlayerSign*collectible.MoodModifier;
+        GameController.Instance.IncreaseTime(collectible.TimeModifier);
         collectible.Collect();
     }
 }
