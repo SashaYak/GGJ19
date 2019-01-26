@@ -162,7 +162,7 @@ public class Player : MonoBehaviour {
         } else {
             if (canBumpSound) {
                 canBumpSound = false;
-                PlayerSounds.BumpSound(false);
+                PlayerSounds.BumpSound();
                 Invoke("CanBumpAgain", bumptTime);
             }
         }
