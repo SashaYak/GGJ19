@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -12,10 +13,63 @@ public class GameController : MonoBehaviour {
     public float PointMultiplier = 1;
     int lastLevel = 0;
     bool running = false;
-    public float currentTimer = 0;
+    float currentTimer = 0;
+
     float maxTimer = 0;
 
     Level CurrentLevel;
+
+    public int MaxBalance = 20;
+    public int BalanceChangeStart = 5;
+    public int BalanceChangeHard = 15;
+
+    [SerializeField]
+    int balance = 0;
+
+    public int Balance {
+        get {
+            return balance;
+        }
+        set {
+            balance = value;
+            AdjustBalance();
+        }
+    }
+
+    public float CurrentTimer {
+        get {
+            return currentTimer;
+        }
+
+        set {
+            currentTimer = value;
+            AdjustTime();
+        }
+    }
+
+    public Color FishColor;
+    public Color WolfColor;
+    public Color RedColor;
+
+    public Image TopImage;
+    public Image BotImage;
+
+    public GameObject Fish;
+    public GameObject FishAngry;
+
+    public GameObject Wolf;
+    public GameObject WolfAngry;
+
+    public GameObject MoodIndicator;
+    public Transform MoodTop;
+    public Transform MoodMid;
+    public Transform MoodBot;
+
+    public Image FillImage;
+    public GameObject TimeIndicator;
+    public Transform TimeTop;
+    public Transform TimeMid;
+    public Transform TimeBot;
 
 
     private void Awake() {
@@ -33,8 +87,8 @@ public class GameController : MonoBehaviour {
     public void StartLevel(int level) {
         running = true;
         CurrentLevel = Levels[level];
-        currentTimer = CurrentLevel.Timer;
         maxTimer = CurrentLevel.Timer;
+        CurrentTimer = CurrentLevel.Timer;
         lastLevel = level;
     }
 
@@ -53,19 +107,64 @@ public class GameController : MonoBehaviour {
 
     private void Update() {
         if (running) {
-            currentTimer -= Time.deltaTime;
-            if (currentTimer<=0) {
+            CurrentTimer -= Time.deltaTime;
+            if (CurrentTimer<=0) {
                 TimeOut();
             }
         }
     }
 
     public void IncreaseTime(float timeIncrease) {
-        currentTimer += timeIncrease*PointMultiplier;
+        CurrentTimer += timeIncrease*PointMultiplier;
     }
 
     public void TimeOut() {
         StopLevel();
     }
 
+    public void Explode(bool isFish=true) {
+        StopLevel();
+    }
+
+    void AdjustBalance() {
+        Debug.Log(Balance);
+        int bal = Balance;
+        if (Balance>0) {
+            if (bal< BalanceChangeStart) {
+                TopImage.color = FishColor;
+            } else {
+                TopImage.color = Color.Lerp(FishColor, RedColor, (float)(bal - BalanceChangeStart) / (float)(MaxBalance - BalanceChangeStart));
+            }
+            if (bal>=BalanceChangeHard) {
+                FishAngry.SetActive(true);
+                Fish.SetActive(false);
+            } else {
+                FishAngry.SetActive(false);
+                Fish.SetActive(true);
+            }
+            MoodIndicator.transform.position = (float)(bal) / MaxBalance * MoodTop.position + (float)(MaxBalance-bal) / MaxBalance * MoodMid.position;
+        } else {
+            bal = -bal;
+
+            if (bal < BalanceChangeStart) {
+                BotImage.color = WolfColor;
+            } else {
+                BotImage.color = Color.Lerp(WolfColor, RedColor, (float)(bal - BalanceChangeStart) / (float)(MaxBalance - BalanceChangeStart));
+            }
+            if (bal >= BalanceChangeHard) {
+                WolfAngry.SetActive(true);
+                Wolf.SetActive(false);
+            } else {
+                WolfAngry.SetActive(false);
+                Wolf.SetActive(true);
+            }
+            MoodIndicator.transform.position = (float)(bal) / MaxBalance * MoodBot.position + (float)(MaxBalance - bal) / MaxBalance * MoodMid.position;
+        }
+    }
+
+    void AdjustTime() {
+        float ratio = (currentTimer / maxTimer);
+        FillImage.fillAmount = 1 - ratio;
+        TimeIndicator.transform.position = ratio * TimeBot.position + (1 - ratio) * TimeTop.position;
+    }
 }

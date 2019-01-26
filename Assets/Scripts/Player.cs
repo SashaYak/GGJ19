@@ -63,15 +63,16 @@ public class Player : MonoBehaviour {
 
 
 
-    float mood;
+    int mood;
 
-    public float Mood {
+    public int Mood {
         get {
             return mood;
         }
 
         set {
-            Debug.Log( "  new value is: " + value);
+            //Debug.Log( "  new value is: " + value);
+            GameController.Instance.Balance = value;
             mood = value;
         }
     }

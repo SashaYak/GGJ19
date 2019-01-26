@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23713060819399318}
   - component: {fileID: 114350490158092752}
   - component: {fileID: 135445665436611516}
+  - component: {fileID: 114215613983998260}
   m_Layer: 0
   m_Name: Unterhose
   m_TagString: Untagged
@@ -97,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1612203603494738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.83, y: -3.7, z: -0.27245414}
+  m_LocalPosition: {x: -2.83, y: -3, z: -0.27245414}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4595061542837122}
@@ -147,6 +148,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1612203603494738}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114215613983998260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612203603494738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114261417201120828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 212640112560163076}
+  TargetImage: {fileID: 0}
   timePerSprite: 0.2
   GoBack: 0
   Sprites:
@@ -180,6 +193,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d7d35695132e7954389c955d5ec5aa20, type: 3}
   - {fileID: 21300000, guid: d7d35695132e7954389c955d5ec5aa20, type: 3}
   - {fileID: 21300000, guid: d7d35695132e7954389c955d5ec5aa20, type: 3}
+  Events: []
 --- !u!114 &114350490158092752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd8367221da8e343bbb6ccd9e918366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoodModifier: 1
+  Type: 2
+  MoodModifier: 5
   TimeModifier: 2
   MovementAcceleration: 3
   MovementDeceleration: 2.5
@@ -213,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 212009092145552270}
+  TargetImage: {fileID: 0}
   timePerSprite: 0.2
   GoBack: 0
   Sprites:
@@ -234,6 +250,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 804b5afb33a06b04eab9ef7bbce72424, type: 3}
   - {fileID: 21300000, guid: 9d3e0efc63b473c40a4132a951ca3c17, type: 3}
   - {fileID: 0}
+  Events:
+  - Position: 12
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114215613983998260}
+          m_MethodName: FartSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!135 &135445665436611516
 SphereCollider:
   m_ObjectHideFlags: 1

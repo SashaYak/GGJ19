@@ -34,8 +34,11 @@ public class PatrolCollectible : BaseCollectible {
             collisionCount = 0;
             return 0;
         } else {
+            if (collisionCount==0) {
+                Sound.BumpSound();
+            }
             collisionCount+= returnVal;
-            Debug.Log(collisionCount);
+            //Debug.Log(collisionCount);
             if (collisionCount > maxCollisions*3) {
                 NextTarget();
             }

@@ -6,7 +6,7 @@ public class BaseCollectible : MonoBehaviour {
 
     public CollectibleType Type;
 
-    public float MoodModifier = 1;
+    public int MoodModifier = 1;
     public float TimeModifier = 2f;
 
 
@@ -21,6 +21,8 @@ public class BaseCollectible : MonoBehaviour {
     public float Radius = 0.1f;
 
     public bool TrySlide = true;
+
+    protected NPC_FMOD_Events Sound;
 
     Vector2 movementSpeed;
 
@@ -48,6 +50,7 @@ public class BaseCollectible : MonoBehaviour {
 
     private void Awake() {
         Init();
+        Sound = GetComponent<NPC_FMOD_Events>();
     }
 
     protected virtual void Init() {
@@ -57,6 +60,7 @@ public class BaseCollectible : MonoBehaviour {
 
     public virtual  void Collect() {
         Debug.Log(name + " collected ");
+        Sound.DeathSound();
         Destroy(this.gameObject);
     }
 
@@ -97,14 +101,14 @@ public class BaseCollectible : MonoBehaviour {
                     newPossition = this.transform.position + new Vector3(speed * Time.deltaTime, -Mathf.Sign(MovementSpeed.y)*speed/2*Time.deltaTime*0, 0);
                     if (CheckMovement(newPossition)) {
                         this.transform.position = newPossition;
-                        Debug.Log("case 1");
+                        //Debug.Log("case 1");
                         return 1;
 
                     } else {
                         newPossition = this.transform.position + new Vector3(-Mathf.Sign(MovementSpeed.x) * speed / 2 * Time.deltaTime*0, speed * Time.deltaTime, 0);
                         if (CheckMovement(newPossition)) {
                             this.transform.position = newPossition;
-                            Debug.Log("case 2");
+                            //Debug.Log("case 2");
                             return 1;
 
                         }
@@ -113,14 +117,14 @@ public class BaseCollectible : MonoBehaviour {
                     newPossition = this.transform.position + new Vector3(-Mathf.Sign(MovementSpeed.x) * speed / 2 * Time.deltaTime*0, speed * Time.deltaTime, 0);
                     if (CheckMovement(newPossition)) {
                         this.transform.position = newPossition;
-                        Debug.Log("case 3");
+                        //Debug.Log("case 3");
                         return 1;
 
                     } else {
                         newPossition = this.transform.position + new Vector3(speed * Time.deltaTime, -Mathf.Sign(MovementSpeed.y) * speed / 2 * Time.deltaTime*0, 0);
                         if (CheckMovement(newPossition)) {
                             this.transform.position = newPossition;
-                            Debug.Log("case 4");
+                            //Debug.Log("case 4");
                             return 1;
 
                         }
