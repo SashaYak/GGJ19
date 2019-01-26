@@ -68,13 +68,25 @@ public class Player_Fmod_Events : MonoBehaviour {
         }
     }
 
-    public void BumpSound(bool fish)
+    public void BumpSound()
+    {
+        if (fmodOn)
+        {          
+                string eventhPath = "event:/SFX/bump";
+                if (FMOD_Debug.CheckFmodEvent(eventhPath))
+                {
+                    RuntimeManager.PlayOneShot(eventhPath, transform.position);
+                }         
+        }
+    }
+
+    public void ComplainSound(bool fish)
     {
         if (fmodOn)
         {
             if (fish)
             {
-                string eventhPath = "event:/SFX/Fish_bump";
+                string eventhPath = "event:/SFX/Fish_complain";
                 if (FMOD_Debug.CheckFmodEvent(eventhPath))
                 {
                     RuntimeManager.PlayOneShot(eventhPath, transform.position);
@@ -82,7 +94,7 @@ public class Player_Fmod_Events : MonoBehaviour {
             }
             else
             {
-                string eventhPath = "event:/SFX/Wolf_bump";
+                string eventhPath = "event:/SFX/Wolf_complain";
                 if (FMOD_Debug.CheckFmodEvent(eventhPath))
                 {
                     RuntimeManager.PlayOneShot(eventhPath, transform.position);
@@ -90,6 +102,20 @@ public class Player_Fmod_Events : MonoBehaviour {
             }
         }
     }
+
+    public void DeathSound()
+    {
+        if (fmodOn)
+        {
+            string eventhPath = "event:/SFX/Player_death";
+            if (FMOD_Debug.CheckFmodEvent(eventhPath))
+            {
+                RuntimeManager.PlayOneShot(eventhPath, transform.position);
+            }
+        }
+    }
+
+
 
 
     private void OnDisable()

@@ -254,6 +254,7 @@ MonoBehaviour:
   Levels:
   - Name: Level 1
     Timer: 60
+  PointMultiplier: 1
   currentTimer: 0
 --- !u!4 &332354700
 Transform:
@@ -419,6 +420,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &920405516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1964405853239418, guid: 058f3d46e72e5de43818cc68438359f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1494756482}
+--- !u!114 &920405517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920405516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930265096
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd8367221da8e343bbb6ccd9e918366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 0
   MoodModifier: 1
   TimeModifier: 2
   MovementAcceleration: 3
@@ -568,6 +586,44 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1481281547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733823575013776, guid: 65a9a9bad570dfa468f80c088a35e4f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1481281546}
+--- !u!114 &1481281548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481281547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa09aad32a4bf946931e37471e4cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1481281549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481281547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &1494756482
 Prefab:
   m_ObjectHideFlags: 0
