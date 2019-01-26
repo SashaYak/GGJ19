@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
     public float MaxRotationAcceleration;
 
 
+    public float Radius = 1.5f;
+
 
     Vector2 movementSpeed;
 
@@ -147,8 +149,83 @@ public class Player : MonoBehaviour {
 
     // TODO Check if not going into walls
     bool CheckMovement(Vector3 newPosition) {
+
+
+        if (!CheckPoint(newPosition, new Vector3(1, 0, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(1, 1, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(0, 1, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(-1, 1, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(-1, 0, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(-1, -1, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(0, -1, 0))) {
+            return false;
+        }
+        if (!CheckPoint(newPosition, new Vector3(1, -1, 0))) {
+            return false;
+        }
         return true;
+        
+        /*
+
+
+        Vector3 direction = newPosition - this.transform.position;
+        direction = direction.normalized * Radius;
+        direction = this.transform.position + direction + new Vector3(0,0,-10);
+
+
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(direction, new Vector3(0,0,1), out hit, Mathf.Infinity)) {
+           BaseCollectible collectible= hit.collider.GetComponent<BaseCollectible>();
+            if (collectible!=null) {
+                return true;
+            } else {
+                Debug.Log(transform.position + " " + direction);
+                MovementSpeed = Vector2.zero;
+                return false;
+            }
+        } else {
+            return true;
+        }
+        return true;
+        */
     }
+
+    bool CheckPoint(Vector3 pos, Vector3 dir) {
+        dir.Normalize();
+        dir = dir * Radius;
+        return (CheckPoint(pos + dir));
+    }
+
+    bool CheckPoint(Vector3 pos) {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(pos + new Vector3(0,0,-10), new Vector3(0, 0, 1), out hit, 15)) {
+            BaseCollectible collectible = hit.collider.GetComponent<BaseCollectible>();
+            if (collectible != null) {
+                return true;
+            } else {
+                MovementSpeed = Vector2.zero;
+                return false;
+            }
+        } else {
+            return true;
+        }
+
+    }
+
 
     void HandleRotation() {
         this.transform.rotation = Quaternion.Euler(0,0, Rotation + Time.deltaTime * RotationSpeed);
