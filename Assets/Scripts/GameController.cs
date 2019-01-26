@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
 
     public Level[] Levels;
 
-
+    public float PointMultiplier = 1;
     int lastLevel = 0;
     bool running = false;
     public float currentTimer = 0;
@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void IncreaseTime(float timeIncrease) {
-        currentTimer += timeIncrease;
+        currentTimer += timeIncrease*PointMultiplier;
     }
 
     public void TimeOut() {

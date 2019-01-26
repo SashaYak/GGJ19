@@ -18,6 +18,8 @@ public class Player : MonoBehaviour {
 
     public float Radius = 1.5f;
 
+    public float Speed;
+
 
     Vector2 movementSpeed;
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour {
 
         set {
             movementSpeed = value;
+            Speed = Mathf.Min(movementSpeed.magnitude / MaxMovementAcceleration,1);
         }
     }
 

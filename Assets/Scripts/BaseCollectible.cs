@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseCollectible : MonoBehaviour {
 
+    public CollectibleType Type;
+
     public float MoodModifier = 1;
     public float TimeModifier = 2f;
 
@@ -234,4 +236,11 @@ public class BaseCollectible : MonoBehaviour {
         }
 
     }
+}
+
+
+public enum CollectibleType {
+    Cup,
+    Cockroach,
+    Panties
 }
