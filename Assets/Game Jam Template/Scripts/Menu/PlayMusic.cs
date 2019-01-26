@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class PlayMusic : MonoBehaviour {
 
@@ -13,14 +14,18 @@ public class PlayMusic : MonoBehaviour {
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
 
 
-	private AudioSource musicSource;				//Reference to the AudioSource which plays music
-	private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
+	private AudioSource musicSource;                //Reference to the AudioSource which plays music
+    private StudioEventEmitter fmodMusicSource;
+
+
+    private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
 
 
 	void Awake () 
 	{
 		//Get a component reference to the AudioSource attached to the UI game object
 		musicSource = GetComponent<AudioSource> ();
+        fmodMusicSource = GetComponent<StudioEventEmitter>();
 		//Call the PlayLevelMusic function to start playing music
 	}
 
@@ -33,12 +38,14 @@ public class PlayMusic : MonoBehaviour {
 			//If scene index is 0 (usually title scene) assign the clip titleMusic to musicSource
 			case 0:
 				musicSource.clip = menuSettings.mainMenuMusicLoop;
-				break;
+               fmodMusicSource.Play();
+                break;
 			//If scene index is 1 (usually main scene) assign the clip mainMusic to musicSource
-			case 1:
+			case 2:
                 Debug.Log("Scene index is 1, setting music to " + menuSettings.musicLoopToChangeTo);
 				musicSource.clip = menuSettings.musicLoopToChangeTo;
-				break;
+                fmodMusicSource.Stop();
+                break;
 
 		}
 
@@ -47,7 +54,9 @@ public class PlayMusic : MonoBehaviour {
 		FadeUp (resetTime);
 		//Play the assigned music clip in musicSource
 		musicSource.Play ();
-	}
+
+        
+    }
 	
 	//Used if running the game in a single scene, takes an integer music source allowing you to choose a clip by number and play.
 	public void PlaySelectedMusic(AudioClip clipToPlay)

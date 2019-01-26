@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 [CreateAssetMenu(menuName = "MenuSettings")]
 public class MenuSettings : ScriptableObject

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using FMODUnity;
+using UnityEditor;
 
 public class ShowPanels : MonoBehaviour {
 
@@ -10,20 +12,14 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject pausePanel;                           //Store a reference to the Game Object PausePanel 
 
     private GameObject activePanel;                         
-    private MenuObject activePanelMenuObject;
-    private EventSystem eventSystem;
+
 
 
 
     private void SetSelection(GameObject panelToSetSelected)
     {
-
+        
         activePanel = panelToSetSelected;
-        activePanelMenuObject = activePanel.GetComponent<MenuObject>();
-        if (activePanelMenuObject != null)
-        {
-            activePanelMenuObject.SetFirstSelected();
-        }
     }
 
     public void Start()
