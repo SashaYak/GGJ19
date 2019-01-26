@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class ButtonSound : MonoBehaviour
 {
-
+    public bool debugChecker = false;
     private Menu_Script menu;
 
   /*  //Do this when the selectable UI object is selected.
@@ -58,11 +58,23 @@ public class ButtonSound : MonoBehaviour
 
     private void Update()
     {
-        if ( !menu.notInMenu && ( Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow)
-            || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)
-            || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+        if (!debugChecker)
         {
-            ButtonChangeSound();
+            if (!menu.notInMenu && (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow)
+                || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)
+                || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+            {
+                ButtonChangeSound();
+            }
+        }
+        else
+        {
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow)
+                            || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow)
+                            || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)))
+            {
+                ButtonChangeSound();
+            }
         }
     }
 

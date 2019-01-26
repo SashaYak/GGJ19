@@ -10,9 +10,14 @@ using UnityEngine.SceneManagement;
 
 public class Pause_Inputs : MonoBehaviour {
 
+
+    public Color highlightedColor;
+    public Color normalColor;
+
+
     public EventSystem ev;
-    public GameObject resume;
-    public GameObject goMenu;
+    public Image resume;
+    public Image goMenu;
 
     private bool onResume = true;
     public ButtonSound butSound;
@@ -24,7 +29,8 @@ public class Pause_Inputs : MonoBehaviour {
     private void Start()
     {
         onResume = true;
-        ev.SetSelectedGameObject(resume);
+        resume.GetComponent<Image>().color = highlightedColor;
+        goMenu.GetComponent<Image>().color = normalColor;
     }
 
     private void Update()
@@ -35,14 +41,16 @@ public class Pause_Inputs : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 if (onResume) onResume = false;
-                ev.SetSelectedGameObject(goMenu);
+                resume.GetComponent<Image>().color = normalColor;
+                goMenu.GetComponent<Image>().color = highlightedColor;
                 butSound.ButtonChangeSound();
 
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 if (!onResume) onResume = true;
-                ev.SetSelectedGameObject(resume);
+                resume.GetComponent<Image>().color = highlightedColor;
+                goMenu.GetComponent<Image>().color = normalColor;
                 butSound.ButtonChangeSound();
 
             }
