@@ -23,7 +23,7 @@ public class NPC_FMOD_Events : MonoBehaviour {
 
         if (GetComponent<StudioEventEmitter>() == null)
         {
-            StudioEventEmitter sc = gameObject.AddComponent(typeof(StudioEventEmitter)) as StudioEventEmitter;
+            _emitter = gameObject.AddComponent(typeof(StudioEventEmitter)) as StudioEventEmitter;
         }
         else _emitter = GetComponent<StudioEventEmitter>();
 
@@ -31,7 +31,7 @@ public class NPC_FMOD_Events : MonoBehaviour {
         if (fmodOn)
         {
 
-            string idleSoundPath = "event:/SFX/" + _type.ToString() + "_movement";          
+            string idleSoundPath = "event:/SFX/" + _type.ToString() + "_idle";          
             if (FMOD_Debug.CheckFmodEvent(idleSoundPath))
             {
                 _emitter.Event = idleSoundPath;
