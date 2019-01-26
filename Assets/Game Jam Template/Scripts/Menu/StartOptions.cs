@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEditor;
+using FMODUnity;
 
 
 public class StartOptions : MonoBehaviour {
@@ -15,8 +17,9 @@ public class StartOptions : MonoBehaviour {
     public CanvasGroup fadeOutImageCanvasGroup;                         //Canvas group used to fade alpha of image which fades in before changing scenes
     public Image fadeImage;                                             //Reference to image used to fade out before changing scenes
 
-	[HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
-	[HideInInspector] public AnimationClip fadeAlphaAnimationClip;		//Animation clip fading out UI elements alpha
+	[HideInInspector] public bool inMainMenu = true;                    //If true, pause button disabled in main menu (Cancel in input manager, default escape key)
+
+    [HideInInspector] public AnimationClip fadeAlphaAnimationClip;		//Animation clip fading out UI elements alpha
 
 
 	private PlayMusic playMusic;										//Reference to PlayMusic script
@@ -27,6 +30,7 @@ public class StartOptions : MonoBehaviour {
 
     void Awake()
 	{
+        Debug.Log(gameObject.name);
 		//Get a reference to ShowPanels attached to UI object
 		showPanels = GetComponent<ShowPanels> ();
 
@@ -81,11 +85,9 @@ public class StartOptions : MonoBehaviour {
     //Once the level has loaded, check if we want to call PlayLevelMusic
     void SceneWasLoaded(Scene scene, LoadSceneMode mode)
     {
-		//if changeMusicOnStart is true, call the PlayLevelMusic function of playMusic
-		if (menuSettingsData.musicLoopToChangeTo != null)
-		{
+
 			playMusic.PlayLevelMusic ();
-		}	
+			
 	}
 
 
@@ -148,4 +150,9 @@ public class StartOptions : MonoBehaviour {
 		//Play second music clip from MenuSettings
 		playMusic.PlaySelectedMusic (menuSettingsData.musicLoopToChangeTo);
 	}
+
+
+
+
+
 }

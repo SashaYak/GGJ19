@@ -15,8 +15,17 @@ public static class FMOD_Debug  {
     [MenuItem("Debug/Fmod On")]
     private static void NewMenuOption()
     {
-       EditorPrefs.SetBool("FmodOn", !EditorPrefs.GetBool("FmodOn"));
-        Debug.Log("FMOD is " + EditorPrefs.GetBool("FmodOn"));
+      
+        if (PlayerPrefs.GetInt("FmodOn") > 0)
+        {
+            PlayerPrefs.SetInt("FmodOn", 0); //0 for no fmod
+        }
+        else
+        {
+            PlayerPrefs.SetInt("FmodOn", 1);    // 1 for fmod
+        }
+
+        Debug.Log("FMOD is " + PlayerPrefs.GetInt("FmodOn"));
     }
 
 #endif

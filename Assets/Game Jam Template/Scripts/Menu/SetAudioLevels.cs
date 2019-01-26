@@ -4,28 +4,38 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using FMODUnity;
 using FMOD;
+using UnityEditor;
 
 public static class FMOD_Volume{
 
-    public static float musicVol;
-    public static float sfxVol;
+    public static float musicVol = 1f;
+    public static float sfxVol = 1f;
+
 
     public static void SetMusicVolume(float vol)
     {
-        string musicBusString = "bus:/Master/Music";
-        FMOD.Studio.Bus musicBus;
+        if (PlayerPrefs.GetInt("FmodOn") > 0)
+        {
+            string musicBusString = "bus:/Master/Music";
+            FMOD.Studio.Bus musicBus;
 
-        musicBus = FMODUnity.RuntimeManager.GetBus(musicBusString);
-        musicBus.setVolume(vol);
+            musicBus = FMODUnity.RuntimeManager.GetBus(musicBusString);
+            musicBus.setVolume(vol);
+            musicVol = vol;
+        }
     }
 
     public static void SetSFXVolume(float vol)
     {
-        string sfxBusString = "bus:/Master/SFX";
-        FMOD.Studio.Bus sfxBus;
+        if (PlayerPrefs.GetInt("FmodOn") > 0)
+        {
+            string sfxBusString = "bus:/Master/SFX";
+            FMOD.Studio.Bus sfxBus;
 
-        sfxBus = FMODUnity.RuntimeManager.GetBus(sfxBusString);
-        sfxBus.setVolume(vol);
+            sfxBus = FMODUnity.RuntimeManager.GetBus(sfxBusString);
+            sfxBus.setVolume(vol);
+            sfxVol = vol;
+        }
 
     }
 
@@ -52,5 +62,6 @@ public class SetAudioLevels : MonoBehaviour {
 	public void SetSfxLevel(float sfxLevel)
 	{
 		mainMixer.SetFloat("sfxVol", sfxLevel);
-	}
+        FMOD_Volume.SetSFXVolume(sfxLevel);
+    }
 }

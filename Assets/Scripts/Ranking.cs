@@ -9,6 +9,8 @@ using FMODUnity;
 
 public class Ranking : MonoBehaviour {
 
+    public int ScoreTest;
+
     public TextMeshProUGUI scoreNumberText;
 
     private int rank;
@@ -24,10 +26,10 @@ public class Ranking : MonoBehaviour {
 
 	void Start () {
         emitter = GetComponent<StudioEventEmitter>();
-        PlayerPrefs.SetInt("Score", 30005);
+        PlayerPrefs.SetInt("Score", ScoreTest);
         scoreNumberText.text = PlayerPrefs.GetInt("Score").ToString();
 
-        rank = Mathf.Clamp(PlayerPrefs.GetInt("Score") / 100, 0, 9);
+        rank = Mathf.Clamp((PlayerPrefs.GetInt("Score") / 100 -1), 0, 9);
         rankingImages = GetComponentsInChildren<Image>();
         foreach(Image im in rankingImages)
         {
@@ -48,7 +50,7 @@ public class Ranking : MonoBehaviour {
             yield return new WaitForSeconds(time);
             rankingImages[i].color = goodColor;
             string eventPath = "event:/SFX/RankingButtons";
-            if (EditorPrefs.GetBool("FmodOn") && FMOD_Debug.CheckFmodEvent(eventPath))
+            if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
                 RuntimeManager.PlayOneShot(eventPath, transform.position);
             }
@@ -58,7 +60,7 @@ public class Ranking : MonoBehaviour {
         if (rank < 4)
         {
             string eventPath = "event:/SFX/RankBad";
-            if (EditorPrefs.GetBool("FmodOn") && FMOD_Debug.CheckFmodEvent(eventPath))
+            if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
                 RuntimeManager.PlayOneShot(eventPath, transform.position);
             }
@@ -66,7 +68,7 @@ public class Ranking : MonoBehaviour {
         else if (rank > 8)
         {
             string eventPath = "event:/SFX/RankAmazing";
-            if (EditorPrefs.GetBool("FmodOn") && FMOD_Debug.CheckFmodEvent(eventPath))
+            if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
                 RuntimeManager.PlayOneShot(eventPath, transform.position);
             }
@@ -74,7 +76,7 @@ public class Ranking : MonoBehaviour {
         else
         {
             string eventPath = "event:/SFX/RankGood";
-            if (EditorPrefs.GetBool("FmodOn") && FMOD_Debug.CheckFmodEvent(eventPath))
+            if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
                 RuntimeManager.PlayOneShot(eventPath, transform.position);
             }

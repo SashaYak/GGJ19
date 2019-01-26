@@ -18,10 +18,14 @@ MonoBehaviour:
   - {fileID: 114576531385362394}
   EditorEvents:
   - {fileID: 114109386536513568}
-  - {fileID: 114618750425697976}
+  - {fileID: 114656632956388224}
+  - {fileID: 114133472491265222}
+  - {fileID: 114383072219180760}
+  - {fileID: 114829614338182746}
+  - {fileID: 114733210724013990}
   MasterBankRef: {fileID: 114030416205201068}
   StringsBankRef: {fileID: 114369628495452512}
-  stringsBankWriteTime: 636840481757516258
+  stringsBankWriteTime: 636841006397606422
   cacheVersion: 2
 --- !u!114 &114017395996860158
 MonoBehaviour:
@@ -56,11 +60,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636840481757476349
+  lastModified: 636841006397540073
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 14912
+    Value: 196800
   Exists: 1
 --- !u!114 &114109386536513568
 MonoBehaviour:
@@ -83,6 +87,28 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 84
+--- !u!114 &114133472491265222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RankingButtons
+  guid: 4bddb77f5d95ae4da78f5a42934b9103
+  Banks:
+  - {fileID: 114030416205201068}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
   Length: 84
 --- !u!114 &114153315602569964
 MonoBehaviour:
@@ -132,12 +158,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636840481757516258
+  lastModified: 636841006397606422
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 968
+    Value: 1142
   Exists: 1
+--- !u!114 &114383072219180760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RankBad
+  guid: 5fbfe82be30a374ca408e3e4beb51fa7
+  Banks:
+  - {fileID: 114030416205201068}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
 --- !u!114 &114525491413991050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,11 +220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Music.bank
-  lastModified: 636840481757785653
+  lastModified: 636841006398035292
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2880
+    Value: 3252832
   Exists: 1
 --- !u!114 &114590273275271134
 MonoBehaviour:
@@ -232,8 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/M4_Auto
   guid: a3839a23896b37409b76886ded0f0301
-  Banks:
-  - {fileID: 114576531385362394}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -241,6 +288,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 84
+--- !u!114 &114656632956388224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RankGood
+  guid: 028666ac1c6181439a731802a78c5761
+  Banks:
+  - {fileID: 114030416205201068}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5067
 --- !u!114 &114682198023110452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,12 +322,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\SFX.bank
-  lastModified: 636840481757576083
+  lastModified: 636841006398085161
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 450
   Exists: 1
+--- !u!114 &114733210724013990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  guid: 2ea3e5e8787c32478669e00e1c21d331
+  Banks:
+  - {fileID: 114576531385362394}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 266710
 --- !u!114 &114747130254036922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +390,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 84
+--- !u!114 &114829614338182746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RankAmazing
+  guid: 7ab5233fc15ac64e8bb0b84393b9462a
+  Banks:
+  - {fileID: 114030416205201068}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6299
 --- !u!114 &114845871716669578
 MonoBehaviour:
   m_ObjectHideFlags: 0

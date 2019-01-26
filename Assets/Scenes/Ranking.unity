@@ -1795,6 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcd9f52eb681014bad6f02ad7aa1c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTest: 1000
   scoreNumberText: {fileID: 1076597386}
   timerForAnimation: 0.5
   badColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
