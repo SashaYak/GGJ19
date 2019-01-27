@@ -6,8 +6,6 @@ public class BaseCollectible : MonoBehaviour {
 
 
     public GameObject PopUpPrefab;
-    public GameObject BadPopUp;
-
 
     public CollectibleType Type;
 
@@ -70,8 +68,9 @@ public class BaseCollectible : MonoBehaviour {
         Sound.DeathSound();
 
         GameObject popUp = Instantiate(PopUpPrefab, transform.position, Quaternion.identity);
-        popUp.GetComponent<PopUpScoreScript>()._typeNPC = Type.ToString();
-       
+        PopUpScoreScript popp = popUp.GetComponent<PopUpScoreScript>();
+        popp._typeNPC = Type.ToString();
+        popp.minusScore = isBad;
 
         Destroy(this.gameObject);
     }
