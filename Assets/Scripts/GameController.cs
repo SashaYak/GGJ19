@@ -96,8 +96,12 @@ public class GameController : MonoBehaviour {
 
     private void Start() {
         StartLevel(0);
-        _emitter.Play();
+        Debug.Log("Start spawning");
+        Spawn(Unterhose);
+        Spawn(Kakerlake);
+        Spawn(Tasse);
 
+        _emitter.Play();
     }
 
     public void StartLevel(int level) {
@@ -106,6 +110,18 @@ public class GameController : MonoBehaviour {
         maxTimer = CurrentLevel.Timer;
         CurrentTimer = CurrentLevel.Timer;
         lastLevel = level;
+        StartCoroutine(doSpawn(CurrentLevel.UnterhosenDelay, Unterhose));
+        StartCoroutine(doSpawn(CurrentLevel.KakerlakenDelay, Kakerlake));
+        StartCoroutine(doSpawn(CurrentLevel.TassenDelay, Tasse));
+
+    }
+
+    IEnumerator doSpawn(float time, BaseCollectible col) {
+        while (running) {
+
+            yield return new WaitForSeconds(time);
+            Spawn(col);
+        }
     }
 
     public void StartNextLevel() {
@@ -191,6 +207,9 @@ public class GameController : MonoBehaviour {
             }
             MoodIndicator.transform.position = (float)(bal) / MaxBalance * MoodBot.position + (float)(MaxBalance - bal) / MaxBalance * MoodMid.position;
         }
+        if (bal>MaxBalance) {
+            Explode();
+        }
     }
 
     void AdjustTime() {
@@ -203,11 +222,37 @@ public class GameController : MonoBehaviour {
 
     }
 
-    public void SetNewScore(int sc)
-    {
+    public void SetNewScore(int sc) {
         CurrentScore += sc;
         ScoreUI.text = CurrentScore.ToString();
-}
+    }
+
+    int maxSpawns = 1000;
+
+    public void Spawn(BaseCollectible spawn) {
+        float x = Random.Range(0, 1f);
+        float y = Random.Range(0, 1f);
+
+        x = x * BotLeft.position.x + (1 - x) * TopRight.position.x;
+        y= y * BotLeft.position.y + (1 - y) * TopRight.position.y;
+        int count = 0;
+        while (!spawn.CheckMovement(new Vector3(x,y,0)) && count< maxSpawns) {
+            x = Random.Range(0, 1f);
+            y = Random.Range(0, 1f);
+
+            x = x * BotLeft.position.x + (1 - x) * TopRight.position.x;
+            y = y * BotLeft.position.y + (1 - y) * TopRight.position.y;
+            count++;
+
+        }
+        if (count< maxSpawns) {
+            Debug.Log("spawned " + count);
+            Instantiate(spawn, new Vector3(x, y, 0), Quaternion.identity);
+        } else {
+            Debug.Log("No spawn");
+        }
+
+    }
 
     private void OnDisable()
     {

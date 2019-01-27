@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -404,6 +404,10 @@ Prefab:
     - target: {fileID: 4960457468619028, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612203603494738, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
@@ -2288,10 +2292,20 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224058323015059580, guid: 3a7648ae26b9d364593be945824ea92d,
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.89990234
+      propertyPath: Levels.Array.data[0].KakerlakenDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: Levels.Array.data[0].TassenDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: Levels.Array.data[0].UnterhosenDelay
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
         type: 2}
@@ -2648,6 +2662,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1733823575013776, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
   m_IsPrefabAsset: 0
@@ -2689,6 +2707,10 @@ Prefab:
     - target: {fileID: 4156713742853624, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964405853239418, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}

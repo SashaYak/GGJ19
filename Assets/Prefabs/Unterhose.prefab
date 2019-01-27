@@ -209,14 +209,14 @@ MonoBehaviour:
     type: 2}
   Type: 2
   MoodModifier: 5
-  TimeModifier: 2
+  TimeModifier: 1
   MovementAcceleration: 3
   MovementDeceleration: 2.5
   MaxMovementAcceleration: 3
   MinMovement: 0.5
   MinDist: 0.1
   TargetPosition: {x: 0, y: 0, z: 0}
-  Radius: 0.1
+  Radius: 0.5
   TrySlide: 1
 --- !u!114 &114706612152030182
 MonoBehaviour:

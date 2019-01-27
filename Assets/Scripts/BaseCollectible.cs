@@ -60,6 +60,7 @@ public class BaseCollectible : MonoBehaviour {
 
     protected virtual void Init() {
         TargetPosition = this.transform.position;
+        Radius = this.transform.localScale.x / 2;
     }
 
 
@@ -176,7 +177,7 @@ public class BaseCollectible : MonoBehaviour {
 
 
     // TODO Check if not going into walls
-    protected bool CheckMovement(Vector3 newPosition) {
+    public bool CheckMovement(Vector3 newPosition) {
 
 
         if (!CheckPoint(newPosition, new Vector3(1, 0, 0))) {
