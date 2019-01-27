@@ -14,6 +14,7 @@ public class PatrolCollectible : BaseCollectible {
             Positions[i] += this.transform.position;
         }
         TargetPosition = Positions[pos];
+        Radius = this.transform.localScale.x / 2;
     }
 
     protected override void CalculateTarget() {

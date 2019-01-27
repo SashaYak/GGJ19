@@ -330,6 +330,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1612203603494738, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbf428bb8acf06c4eba30fb5599c3f41, type: 2}
   m_IsPrefabAsset: 0
@@ -2058,6 +2062,26 @@ Prefab:
       propertyPath: TopRight
       value: 
       objectReference: {fileID: 1813949858}
+    - target: {fileID: 224101995679677958, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: Levels.Array.data[0].KakerlakenDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: Levels.Array.data[0].TassenDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
+        type: 2}
+      propertyPath: Levels.Array.data[0].UnterhosenDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7648ae26b9d364593be945824ea92d, type: 2}
   m_IsPrefabAsset: 0
@@ -2070,7 +2094,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4694292494750992, guid: e2e25bc4348081e4f9559331b368705d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -31.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4694292494750992, guid: e2e25bc4348081e4f9559331b368705d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2202,6 +2226,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1733823575013776, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a9a9bad570dfa468f80c088a35e4f4, type: 2}
   m_IsPrefabAsset: 0
@@ -2243,6 +2271,10 @@ Prefab:
     - target: {fileID: 4156713742853624, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964405853239418, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058f3d46e72e5de43818cc68438359f0, type: 2}
@@ -2359,6 +2391,10 @@ Prefab:
         type: 2}
       propertyPath: OverrideMaxDistance
       value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800283920012700, guid: 35121164f64277f4884964a803007da4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35121164f64277f4884964a803007da4, type: 2}
