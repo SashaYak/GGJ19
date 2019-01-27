@@ -43,6 +43,7 @@ public class Menu_Script : MonoBehaviour {
         
         notInMenu = false;
         if (menuImage != null) menuImage.SetActive(true);
+        GetComponent<ShowPanels>().ShowMenu();
     }
 
     public void SetGame()
