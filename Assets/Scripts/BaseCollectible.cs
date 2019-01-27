@@ -6,6 +6,8 @@ public class BaseCollectible : MonoBehaviour {
 
 
     public GameObject PopUpPrefab;
+    public GameObject BadPopUp;
+
 
     public CollectibleType Type;
 
@@ -26,6 +28,8 @@ public class BaseCollectible : MonoBehaviour {
     public bool TrySlide = true;
 
     protected NPC_FMOD_Events Sound;
+
+    protected bool isBad = false;
 
     Vector2 movementSpeed;
 
@@ -258,6 +262,10 @@ public class BaseCollectible : MonoBehaviour {
             return true;
         }
 
+    }
+
+    public void SetBad(bool bad) {
+        isBad = bad;
     }
 }
 

@@ -9,6 +9,7 @@ public class PopUpScoreScript : MonoBehaviour {
     private TextMeshPro text;
     public NPC_Score_Settings scoreSettings;
     public string _typeNPC;
+    public bool minusScore = false;
 
     private void Start()
     {
@@ -28,8 +29,12 @@ public class PopUpScoreScript : MonoBehaviour {
                 break;
         }
 
-
-        text.text = "+" + scorePoints.ToString();
+        if (minusScore) {
+            text.text = "-" + scorePoints.ToString();
+            scorePoints = -scorePoints;
+        } else {
+            text.text = "+" + scorePoints.ToString();
+        }
         StartCoroutine(waitToDestroy());
     }
 
