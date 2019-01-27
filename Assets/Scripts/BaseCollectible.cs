@@ -151,6 +151,8 @@ public class BaseCollectible : MonoBehaviour {
         Vector3 newPossition = this.transform.position + new Vector3(KickSpeed.x * Time.deltaTime, KickSpeed.y * Time.deltaTime, 0);
         if (CheckMovement(newPossition)) {
             this.transform.position = newPossition;
+        } else {
+            KickSpeed = Vector2.zero;
         }
     }
 
@@ -221,7 +223,16 @@ public class BaseCollectible : MonoBehaviour {
     protected bool CheckPoint(Vector3 pos, Vector3 dir) {
         dir.Normalize();
         dir = dir * Radius;
-        return (CheckPoint(pos + dir));
+        return (CheckPoint(pos + dir) && CheckPoint2D(pos,dir));
+    }
+
+    bool CheckPoint2D(Vector3 pos, Vector3 dir) {
+        RaycastHit2D hit = Physics2D.Raycast(pos, dir, Radius*0.75f);
+        if (hit.collider != null) {
+            Debug.Log(hit.collider.gameObject.name + " was hit");
+            return false;
+        }
+        return true;
     }
 
     protected bool CheckPoint(Vector3 pos) {
