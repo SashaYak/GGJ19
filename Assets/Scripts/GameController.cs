@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
 
     public static GameController Instance;
 
-
+    public Animator BG_Animator;
     public Level[] Levels;
 
     public float PointMultiplier = 1;
@@ -119,9 +119,18 @@ public class GameController : MonoBehaviour {
     }
 
     public void EndLevel() {
+        BG_Animator.SetBool("End", true);
+    }
+
+    public IEnumerator EndBGAnimation()
+    {
+        yield return new WaitForSeconds(2f);
         PlayerPrefs.SetInt("Score", CurrentScore);
         SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
+
+
+
 
     public void Pause() {
         running = !running;
@@ -190,7 +199,7 @@ public class GameController : MonoBehaviour {
         TimeIndicator.transform.position = ratio * TimeBot.position + (1 - ratio) * TimeTop.position;
 
         _emitter.SetParameter("DirtLevel", 1f -ratio);
-        Debug.Log("sound " + (1f - ratio).ToString());
+        
 
     }
 

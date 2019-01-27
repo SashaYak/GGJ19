@@ -34,11 +34,11 @@ public class Ranking : MonoBehaviour {
       //  PlayerPrefs.SetInt("Score", ScoreTest);
         scoreNumberText.text = PlayerPrefs.GetInt("Score").ToString();
 
-        rank = Mathf.Clamp((PlayerPrefs.GetInt("Score") / 100 -1), 0, 9);
+        rank = Mathf.Clamp((PlayerPrefs.GetInt("Score") / 100 ), 0, 9);
        
         StartCoroutine(goRanking(timerForAnimation));
 
-
+        UnityEngine.Debug.Log(rank);
 
 	}
 
@@ -46,18 +46,22 @@ public class Ranking : MonoBehaviour {
     {
         yield return new WaitForSeconds(1.5f);
 
-        for (int i = 0; i <= rank; i++)
+        
+        for (int i = 0; i < rank; i++)
         {
-            yield return new WaitForSeconds(time);
-            heads.transform.localPosition += new Vector3(0f, 30f, 0f);
-            string eventPath = "event:/SFX/RankingButtons";
-            if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
+            if (rank < 10)
             {
-                RuntimeManager.PlayOneShot(eventPath, transform.position);
+                yield return new WaitForSeconds(time);
+                heads.transform.localPosition += new Vector3(0f, 30f, 0f);
+                string eventPath = "event:/SFX/RankingButtons";
+                if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
+                {
+                    RuntimeManager.PlayOneShot(eventPath, transform.position);
+                }
             }
         }
         yield return new WaitForSeconds(time);
-        _texts[rank+1].text = "<b>" + _texts[rank+1].text;
+        _texts[rank].text = "<b>" + _texts[rank].text;
 
 
         if (rank < 4)
@@ -75,9 +79,13 @@ public class Ranking : MonoBehaviour {
             {
                 RuntimeManager.PlayOneShot(eventPath, transform.position);
             }
+
+            heads.GetComponentInChildren<Animator>().SetBool("great", true);
+
         }
         else
         {
+            heads.GetComponentInChildren<Animator>().SetBool("great", true);
             string eventPath = "event:/SFX/RankGood";
             if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
