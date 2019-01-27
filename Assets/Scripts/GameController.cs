@@ -174,9 +174,16 @@ public class GameController : MonoBehaviour {
     }
 
     void AdjustBalance() {
+        if (!running) {
+            return;
+        }
         Debug.Log(Balance);
         int bal = Balance;
         if (Balance>0) {
+            if (bal > MaxBalance) {
+                Explode();
+                bal = MaxBalance;
+            }
             if (bal< BalanceChangeStart) {
                 TopImage.color = FishColor;
             } else {
@@ -192,7 +199,10 @@ public class GameController : MonoBehaviour {
             MoodIndicator.transform.position = (float)(bal) / MaxBalance * MoodTop.position + (float)(MaxBalance-bal) / MaxBalance * MoodMid.position;
         } else {
             bal = -bal;
-
+            if (bal > MaxBalance) {
+                Explode();
+                bal = MaxBalance;
+            }
             if (bal < BalanceChangeStart) {
                 BotImage.color = WolfColor;
             } else {
@@ -207,12 +217,13 @@ public class GameController : MonoBehaviour {
             }
             MoodIndicator.transform.position = (float)(bal) / MaxBalance * MoodBot.position + (float)(MaxBalance - bal) / MaxBalance * MoodMid.position;
         }
-        if (bal>MaxBalance) {
-            Explode();
-        }
+        
     }
 
     void AdjustTime() {
+        if (!running) {
+            return;
+        }
         float ratio = (currentTimer / maxTimer);
         FillImage.fillAmount = 1 - ratio;
         TimeIndicator.transform.position = ratio * TimeBot.position + (1 - ratio) * TimeTop.position;

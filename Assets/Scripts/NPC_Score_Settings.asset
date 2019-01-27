@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff27b5c61102334c96af85a57cdae00, type: 3}
   m_Name: NPC_Score_Settings
   m_EditorClassIdentifier: 
-  scoreForCup: 5
-  scoreForCockroach: 3
-  scoreForPanties: 6
+  scoreForCup: 10
+  scoreForCockroach: 5
+  scoreForPanties: 15
