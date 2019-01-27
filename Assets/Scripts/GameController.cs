@@ -208,7 +208,8 @@ public class GameController : MonoBehaviour {
         FillImage.fillAmount = 1 - ratio;
         TimeIndicator.transform.position = ratio * TimeBot.position + (1 - ratio) * TimeTop.position;
 
-        _emitter.SetParameter("DirtLevel", ratio);
+        _emitter.SetParameter("DirtLevel", 1f -ratio);
+        Debug.Log("sound " + (1f - ratio).ToString());
 
     }
 

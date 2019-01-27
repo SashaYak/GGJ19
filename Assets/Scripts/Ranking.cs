@@ -6,37 +6,36 @@ using UnityEngine.UI;
 using TMPro;
 using FMOD;
 using FMODUnity;
+using UnityEngine.UI;
 
 public class Ranking : MonoBehaviour {
 
    // public int ScoreTest;
+   
 
     public TextMeshProUGUI scoreNumberText;
+    public GameObject Texts;
 
+    private TextMeshProUGUI[] _texts;
     private int rank;
     public float timerForAnimation = 1f;
 
-    public Color badColor;
-    public Color goodColor;
-    public Color rankColor;
+    public RectTransform heads;
 
     private Image[] rankingImages;
     private StudioEventEmitter emitter;
 
 
 	void Start () {
+
+        _texts = Texts.GetComponentsInChildren<TextMeshProUGUI>();
+
         emitter = GetComponent<StudioEventEmitter>();
       //  PlayerPrefs.SetInt("Score", ScoreTest);
         scoreNumberText.text = PlayerPrefs.GetInt("Score").ToString();
 
         rank = Mathf.Clamp((PlayerPrefs.GetInt("Score") / 100 -1), 0, 9);
-        rankingImages = GetComponentsInChildren<Image>();
-        foreach(Image im in rankingImages)
-        {
-            im.color = badColor;
-        }
-
-
+       
         StartCoroutine(goRanking(timerForAnimation));
 
 
@@ -45,10 +44,12 @@ public class Ranking : MonoBehaviour {
 
     public IEnumerator goRanking(float time)
     {
+        yield return new WaitForSeconds(1.5f);
+
         for (int i = 0; i <= rank; i++)
         {
             yield return new WaitForSeconds(time);
-            rankingImages[i].color = goodColor;
+            heads.transform.localPosition += new Vector3(0f, 30f, 0f);
             string eventPath = "event:/SFX/RankingButtons";
             if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
@@ -56,7 +57,9 @@ public class Ranking : MonoBehaviour {
             }
         }
         yield return new WaitForSeconds(time);
-        rankingImages[rank].color = rankColor;
+        _texts[rank+1].text = "<b>" + _texts[rank+1].text;
+
+
         if (rank < 4)
         {
             string eventPath = "event:/SFX/RankBad";
