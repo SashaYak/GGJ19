@@ -10,6 +10,9 @@ public class PatrolCollectible : BaseCollectible {
     public int maxCollisions = 5;
 
     protected override void Init() {
+        for (int i = 0; i < Positions.Length; i++) {
+            Positions[i] += this.transform.position;
+        }
         TargetPosition = Positions[pos];
     }
 

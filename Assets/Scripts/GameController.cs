@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -76,6 +77,13 @@ public class GameController : MonoBehaviour {
     public Transform TimeMid;
     public Transform TimeBot;
 
+    public Transform BotLeft;
+    public Transform TopRight;
+
+    public BaseCollectible Unterhose;
+    public BaseCollectible Kakerlake;
+    public BaseCollectible Tasse;
+
 
     private void Awake() {
         if (Instance == null) {
@@ -107,6 +115,12 @@ public class GameController : MonoBehaviour {
 
     public void StopLevel() {
         running = false;
+        Invoke("EndLevel", 0.5f);
+    }
+
+    public void EndLevel() {
+        PlayerPrefs.SetInt("Score", CurrentScore);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 
     public void Pause() {

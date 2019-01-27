@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4156713742853624}
   - component: {fileID: 33271854065092396}
   - component: {fileID: 23878389100659860}
-  - component: {fileID: 114903763926121166}
   - component: {fileID: 135296079106778664}
   - component: {fileID: 114923584741100392}
+  - component: {fileID: 114213673972299604}
   m_Layer: 0
   m_Name: Kakerlake
   m_TagString: Untagged
@@ -148,6 +148,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964405853239418}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114213673972299604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964405853239418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872ed1bd4d221d44eac7f69099f47458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopUpPrefab: {fileID: 1969228032985376, guid: 61aae02a4a750d042a7b1c1658621375,
+    type: 2}
+  Type: 1
+  MoodModifier: 5
+  TimeModifier: 2
+  MovementAcceleration: 4
+  MovementDeceleration: 4
+  MaxMovementAcceleration: 4
+  MinMovement: 1
+  MinDist: 0.5
+  TargetPosition: {x: 0, y: 0, z: 0}
+  Radius: 0.2
+  TrySlide: 1
+  Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 3, z: 0}
+  - {x: 3, y: 3, z: 0}
+  - {x: 3, y: 0, z: 0}
+  maxCollisions: 5
 --- !u!114 &114467310802589156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,30 +214,6 @@ MonoBehaviour:
   - {x: -0.1, y: 0, z: -0.1}
   - {x: 0.1, y: 0, z: -0.1}
   GoBack: 1
---- !u!114 &114903763926121166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1964405853239418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd8367221da8e343bbb6ccd9e918366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PopUpPrefab: {fileID: 1969228032985376, guid: 61aae02a4a750d042a7b1c1658621375,
-    type: 2}
-  Type: 1
-  MoodModifier: 5
-  TimeModifier: 2
-  MovementAcceleration: 3
-  MovementDeceleration: 2.5
-  MaxMovementAcceleration: 3
-  MinMovement: 0.5
-  MinDist: 0.1
-  TargetPosition: {x: 0, y: 0, z: 0}
-  Radius: 0.1
-  TrySlide: 1
 --- !u!114 &114923584741100392
 MonoBehaviour:
   m_ObjectHideFlags: 1
