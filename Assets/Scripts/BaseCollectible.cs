@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BaseCollectible : MonoBehaviour {
 
+
+    public GameObject PopUpPrefab;
+
     public CollectibleType Type;
 
     public int MoodModifier = 1;
@@ -61,6 +64,11 @@ public class BaseCollectible : MonoBehaviour {
     public virtual  void Collect() {
         Debug.Log(name + " collected ");
         Sound.DeathSound();
+
+        GameObject popUp = Instantiate(PopUpPrefab, transform.position, Quaternion.identity);
+        popUp.GetComponent<PopUpScoreScript>()._typeNPC = Type.ToString();
+       
+
         Destroy(this.gameObject);
     }
 

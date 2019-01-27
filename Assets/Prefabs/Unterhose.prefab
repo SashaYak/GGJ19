@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd8367221da8e343bbb6ccd9e918366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopUpPrefab: {fileID: 1969228032985376, guid: 61aae02a4a750d042a7b1c1658621375,
+    type: 2}
   Type: 2
   MoodModifier: 5
   TimeModifier: 2
