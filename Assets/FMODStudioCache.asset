@@ -45,7 +45,7 @@ MonoBehaviour:
   - {fileID: 114871363604512020}
   MasterBankRef: {fileID: 114891321938095266}
   StringsBankRef: {fileID: 114279779581053248}
-  stringsBankWriteTime: 636841785825059678
+  stringsBankWriteTime: 636841817728650655
   cacheVersion: 2
 --- !u!114 &114004941380579642
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636841785825059678
+  lastModified: 636841817728650655
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -406,13 +406,13 @@ MonoBehaviour:
   guid: e75362ffc8d8a44a96ccd7a9b6b5f8fd
   Banks:
   - {fileID: 114298104180694134}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 12416
 --- !u!114 &114298104180694134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,11 +425,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\SFX.bank
-  lastModified: 636841785826924710
+  lastModified: 636841821750000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4214336
+    Value: 4381600
   Exists: 1
 --- !u!114 &114299913530052266
 MonoBehaviour:
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Music.bank
-  lastModified: 636841785825478563
+  lastModified: 636841817729248741
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 3578
 --- !u!114 &114815566544407298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636841785824999835
+  lastModified: 636841817728575339
   LoadResult: 0
   FileSizes:
   - Name: Desktop

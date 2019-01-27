@@ -9,7 +9,7 @@ using FMODUnity;
 
 public class Ranking : MonoBehaviour {
 
-    public int ScoreTest;
+   // public int ScoreTest;
 
     public TextMeshProUGUI scoreNumberText;
 
@@ -26,7 +26,7 @@ public class Ranking : MonoBehaviour {
 
 	void Start () {
         emitter = GetComponent<StudioEventEmitter>();
-        PlayerPrefs.SetInt("Score", ScoreTest);
+      //  PlayerPrefs.SetInt("Score", ScoreTest);
         scoreNumberText.text = PlayerPrefs.GetInt("Score").ToString();
 
         rank = Mathf.Clamp((PlayerPrefs.GetInt("Score") / 100 -1), 0, 9);
