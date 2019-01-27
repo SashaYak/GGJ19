@@ -78,4 +78,9 @@ public class NPC_FMOD_Events : MonoBehaviour {
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        _emitter.Stop();
+    }
 }
