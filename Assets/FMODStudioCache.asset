@@ -45,7 +45,7 @@ MonoBehaviour:
   - {fileID: 114871363604512020}
   MasterBankRef: {fileID: 114891321938095266}
   StringsBankRef: {fileID: 114279779581053248}
-  stringsBankWriteTime: 636841355178171574
+  stringsBankWriteTime: 636841785825059678
   cacheVersion: 2
 --- !u!114 &114004941380579642
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636841355178171574
+  lastModified: 636841785825059678
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -403,14 +403,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Player_movement
-  guid: 3756445146343d4587d98e8f39f7b119
+  guid: e75362ffc8d8a44a96ccd7a9b6b5f8fd
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: 114244056320760092}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -426,11 +425,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\SFX.bank
-  lastModified: 636841355187207867
+  lastModified: 636841785826924710
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4207840
+    Value: 4214336
   Exists: 1
 --- !u!114 &114299913530052266
 MonoBehaviour:
@@ -444,15 +443,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cockroach_bump
-  guid: 9e4cdddb58f3db45877c3c4cd61a11d2
+  guid: 83e381f8f715c04dafa0094a96adeb53
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
 --- !u!114 &114311427423493750
 MonoBehaviour:
@@ -475,7 +474,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 84
+  Length: 500
 --- !u!114 &114330440237330016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,15 +487,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Panties_fart
-  guid: 26ea5540d581af4091044bd895dbd30a
+  guid: bf57471b21a4a24d973e1866b301c567
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 1000
 --- !u!114 &114345739801167102
 MonoBehaviour:
@@ -510,15 +509,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cockroach_death
-  guid: 41c2e59079e458468c3f9a1db8b72097
+  guid: 4ec97fd184d38c408e2676db43135470
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
 --- !u!114 &114369628495452512
 MonoBehaviour:
@@ -595,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Music.bank
-  lastModified: 636841355178820042
+  lastModified: 636841785825478563
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -635,15 +634,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cup_idle
-  guid: b9302d791166334c8c0697c6519748c0
+  guid: d0cec128975e2d4d9390953a58895e05
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 5500
 --- !u!114 &114471761343506658
 MonoBehaviour:
@@ -703,7 +702,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 84
+  Length: 475
 --- !u!114 &114493566906286690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,15 +938,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cup_bump
-  guid: 2c63d38aa303f5478f33a84575072056
+  guid: ccf4520ae121d54a99e674b9a7396440
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
 --- !u!114 &114634814639921042
 MonoBehaviour:
@@ -961,15 +960,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Panties_idle
-  guid: b97a376842abef4b815626c220e5f3a0
+  guid: fa393b6f19a2ee46a52da39c937fffe9
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 2800
 --- !u!114 &114647577893263356
 MonoBehaviour:
@@ -983,15 +982,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cup_death
-  guid: 8be2029c6b651347a5306c4de5bd8968
+  guid: 8a3c764bb6c66845863beaeb32e65c3e
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 1000
 --- !u!114 &114656632956388224
 MonoBehaviour:
@@ -1068,15 +1067,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Panties_bump
-  guid: 55098c7f2ab91e46bc31fd6a1e69961c
+  guid: 06da87f4f013b547b346b635aee33356
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
 --- !u!114 &114733210724013990
 MonoBehaviour:
@@ -1330,15 +1329,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Cockroach_idle
-  guid: 57b6802cc4ffe94a8c61ad7646033cb3
+  guid: 11f71956d254f84aa36a289d7f9dbf74
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 7500
 --- !u!114 &114845871716669578
 MonoBehaviour:
@@ -1374,15 +1373,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/SFX/Panties_death
-  guid: c8e539cf2a491949a6fe84f4a7bea1ca
+  guid: 3d082e91050dbc4199acfb4520b3a217
   Banks:
   - {fileID: 114298104180694134}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
 --- !u!114 &114877679489742066
 MonoBehaviour:
@@ -1440,12 +1439,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636841355178111738
+  lastModified: 636841785824999835
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 557632
+    Value: 557376
   Exists: 1
+--- !u!114 &114944376519917484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114987914916661628
 MonoBehaviour:
   m_ObjectHideFlags: 0
