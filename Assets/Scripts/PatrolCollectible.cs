@@ -9,8 +9,14 @@ public class PatrolCollectible : BaseCollectible {
 
     public int maxCollisions = 5;
 
+    public bool RandomRoute = true;
+    public float MaxDist = 3;
+
     protected override void Init() {
         for (int i = 0; i < Positions.Length; i++) {
+            if (RandomRoute) {
+                Positions[i] = new Vector3(Random.Range(-MaxDist,MaxDist), Random.Range(-MaxDist, MaxDist),0);
+            }
             Positions[i] += this.transform.position;
         }
         TargetPosition = Positions[pos];

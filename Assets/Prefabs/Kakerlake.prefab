@@ -178,6 +178,8 @@ MonoBehaviour:
   - {x: 3, y: 3, z: 0}
   - {x: 3, y: 0, z: 0}
   maxCollisions: 5
+  RandomRoute: 1
+  MaxDist: 6
 --- !u!114 &114467310802589156
 MonoBehaviour:
   m_ObjectHideFlags: 1

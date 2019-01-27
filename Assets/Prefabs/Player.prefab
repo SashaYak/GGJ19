@@ -678,7 +678,7 @@ MonoBehaviour:
   RotationDeceleration: 150
   MaxRotationAcceleration: 150
   Radius: 1.5
-  Speed: 0
+  TrySlide: 1
   PlayerSounds: {fileID: 114957339043795594}
 --- !u!114 &114219006946840204
 MonoBehaviour:
@@ -708,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 114195224353070424}
   ColliderName: 0
+  KickValue: 0.75
 --- !u!114 &114843806470170376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -733,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 114195224353070424}
   ColliderName: 0
+  KickValue: 0.75
 --- !u!114 &114955265462088708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -744,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: 
+  Event: event:/SFX/Player_movement
   PlayEvent: 0
   StopEvent: 0
   CollisionTag: 
@@ -753,8 +755,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 4.6
 --- !u!114 &114957339043795594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -816,7 +818,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f5b281c7b8462384284f8310cbea8683, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4eee38f703783f94882050424d6b2748, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
