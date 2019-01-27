@@ -163,7 +163,7 @@ MonoBehaviour:
     type: 2}
   Type: 1
   MoodModifier: 5
-  TimeModifier: 2
+  TimeModifier: 1
   MovementAcceleration: 4
   MovementDeceleration: 4
   MaxMovementAcceleration: 4

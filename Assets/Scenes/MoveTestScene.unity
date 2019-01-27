@@ -2070,17 +2070,17 @@ Prefab:
     - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
         type: 2}
       propertyPath: Levels.Array.data[0].KakerlakenDelay
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
         type: 2}
       propertyPath: Levels.Array.data[0].TassenDelay
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114862318679566074, guid: 3a7648ae26b9d364593be945824ea92d,
         type: 2}
       propertyPath: Levels.Array.data[0].UnterhosenDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7648ae26b9d364593be945824ea92d, type: 2}
@@ -2391,10 +2391,6 @@ Prefab:
         type: 2}
       propertyPath: OverrideMaxDistance
       value: 4.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800283920012700, guid: 35121164f64277f4884964a803007da4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35121164f64277f4884964a803007da4, type: 2}
