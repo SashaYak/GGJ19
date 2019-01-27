@@ -30,6 +30,7 @@ public class PopUpScoreScript : MonoBehaviour {
 
 
         text.text = "+" + scorePoints.ToString();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().SetNewScore(scorePoints);
         StartCoroutine(waitToDestroy());
     }
 
