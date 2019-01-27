@@ -66,6 +66,7 @@ public class Ranking : MonoBehaviour {
 
         if (rank < 4)
         {
+            heads.GetComponentInChildren<Animator>().SetBool("bad", true);
             string eventPath = "event:/SFX/RankBad";
             if (PlayerPrefs.GetInt("FmodOn") > 0 && FMOD_Debug.CheckFmodEvent(eventPath))
             {
