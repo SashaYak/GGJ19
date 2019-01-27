@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHit : PlayerCollidor {
 
+    public float KickValue = 0.75f;
+
     protected override void OnCollisionEnter(Collision collision) {
 
         Debug.Log(collision);
@@ -12,7 +14,7 @@ public class PlayerHit : PlayerCollidor {
             float maxSpeed = Mathf.Max(Player.RotationSpeed*2, Player.MovementSpeed.magnitude*5f);
             Vector3 direction = collectible.transform.position - collision.contacts[0].point;
             direction = direction.normalized * maxSpeed;
-            collectible.Kick(new Vector2(direction.x, direction.y));
+            collectible.Kick(new Vector2(direction.x, direction.y)*KickValue);
         }
     }
 }

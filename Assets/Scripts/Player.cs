@@ -232,12 +232,21 @@ public class Player : MonoBehaviour {
     bool CheckPoint(Vector3 pos, Vector3 dir) {
         dir.Normalize();
         dir = dir * Radius;
-        return (CheckPoint(pos + dir));
+        return (CheckPoint(pos + dir)) && CheckPoint2D(pos,dir);
+    }
+
+    bool CheckPoint2D(Vector3 pos, Vector3 dir) {
+        RaycastHit2D hit = Physics2D.Raycast(pos, dir, Radius*0.75f);
+        if ( hit.collider!=null) {
+            Debug.Log(hit.collider.gameObject.name + " was hit");
+            MovementSpeed = Vector2.zero;
+            return false;
+        }
+        return true;
     }
 
     bool CheckPoint(Vector3 pos) {
         RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(pos + new Vector3(0,0,-10), new Vector3(0, 0, 1), out hit, 15)) {
             BaseCollectible collectible = hit.collider.GetComponent<BaseCollectible>();
             if (collectible != null) {
