@@ -18,7 +18,11 @@ public class Player : MonoBehaviour {
 
     public float Radius = 1.5f;
 
-    public float Speed;
+    public bool TrySlide = true;
+
+
+    float Speed;
+
 
     public Player_Fmod_Events PlayerSounds;
 
@@ -136,9 +140,9 @@ public class Player : MonoBehaviour {
     }
 
     void CalculateRotation() {
-        if (Input.GetKey(KeyCode.K)) { // Can be changed Left turn (counterclockwise)
+        if (Input.GetKey(KeyCode.LeftArrow)) { // Can be changed Left turn (counterclockwise)
             RotationSpeed += RotationAcceleration * Time.deltaTime;
-        } else if (Input.GetKey(KeyCode.L)) { // Can be changed Right turn (Clockwise)
+        } else if (Input.GetKey(KeyCode.RightArrow)) { // Can be changed Right turn (Clockwise)
             RotationSpeed -= RotationAcceleration * Time.deltaTime;
         } else { // no Input
             RotationSpeed -= Mathf.Sign(RotationSpeed) * RotationDeceleration * Time.deltaTime;
@@ -156,16 +160,81 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void HandleMovement() {
-        Vector3 newPossition= this.transform.position + new Vector3(MovementSpeed.x * Time.deltaTime, MovementSpeed.y * Time.deltaTime, 0);
-        if (CheckMovement(newPossition)) {
+    float bumpslow = 0.9f;
+    float backjump = 0.1f;
+    float beforeCheck = 0f;
+    float minSpeed = 0.0001f;
+
+    int HandleMovement() {
+        Vector3 Movement = new Vector3(MovementSpeed.x * Time.deltaTime, MovementSpeed.y * Time.deltaTime, 0);
+        Vector3 newPossition= this.transform.position + Movement;
+        if (CheckMovement(newPossition + Movement* beforeCheck)) {
             this.transform.position = newPossition;
+            return 0;
         } else {
             if (canBumpSound) {
                 canBumpSound = false;
                 PlayerSounds.BumpSound();
                 Invoke("CanBumpAgain", bumptTime);
             }
+            if (TrySlide) {
+                if (MovementSpeed.x< minSpeed || MovementSpeed.y < minSpeed) {
+                    MovementSpeed = Vector2.zero;
+                    return 3;
+                }
+                float speed = MovementSpeed.magnitude;
+                if (Mathf.Abs(MovementSpeed.x) > Mathf.Abs(MovementSpeed.y)) {
+                    Movement = new Vector3(speed * Time.deltaTime, -Mathf.Sign(MovementSpeed.y) * speed / 2 * Time.deltaTime * backjump, 0);
+                    newPossition = this.transform.position+ Movement;
+                    if (CheckMovement(newPossition + Movement * beforeCheck)) {
+                        this.transform.position = newPossition;
+                        //Debug.Log("case 1");
+                        MovementSpeed = new Vector2(MovementSpeed.x * bumpslow, 0);
+                        return 1;
+
+                    } else {
+                        Movement= new Vector3(-Mathf.Sign(MovementSpeed.x) * speed / 2 * Time.deltaTime * backjump, speed * Time.deltaTime, 0);
+                        newPossition = this.transform.position + Movement;
+                        if (CheckMovement(newPossition + Movement * beforeCheck)) {
+                            this.transform.position = newPossition;
+                            //Debug.Log("case 2");
+                            MovementSpeed = new Vector2(0, MovementSpeed.y * bumpslow);
+                            return 1;
+
+                        } else {
+                            MovementSpeed = Vector2.zero;
+                            return 3;
+
+                        }
+                    }
+                } else {
+                    Movement = new Vector3(-Mathf.Sign(MovementSpeed.x) * speed / 2 * Time.deltaTime * backjump, speed * Time.deltaTime, 0);
+                    newPossition = this.transform.position + Movement;
+                    if (CheckMovement(newPossition + Movement * beforeCheck)) {
+                        this.transform.position = newPossition;
+                        //Debug.Log("case 3");
+                        MovementSpeed = new Vector2(0, MovementSpeed.y * bumpslow);
+                        return 1;
+
+                    } else {
+                        Movement = new Vector3(speed * Time.deltaTime, -Mathf.Sign(MovementSpeed.y) * speed / 2 * Time.deltaTime * backjump, 0);
+                        newPossition = this.transform.position + Movement;
+                        if (CheckMovement(newPossition + Movement * beforeCheck)) {
+                            this.transform.position = newPossition;
+                            //Debug.Log("case 4");
+                            MovementSpeed = new Vector2(MovementSpeed.x* bumpslow, 0);
+                            return 1;
+
+                        } else {
+                            MovementSpeed = Vector2.zero;
+                            return 3;
+                        }
+                    }
+
+                }
+            }
+            MovementSpeed = Vector2.zero;
+            return 3;
         }
     }
 
@@ -238,8 +307,7 @@ public class Player : MonoBehaviour {
     bool CheckPoint2D(Vector3 pos, Vector3 dir) {
         RaycastHit2D hit = Physics2D.Raycast(pos, dir, Radius*0.75f);
         if ( hit.collider!=null) {
-            Debug.Log(hit.collider.gameObject.name + " was hit");
-            MovementSpeed = Vector2.zero;
+            //Debug.Log(hit.collider.gameObject.name + " was hit");
             return false;
         }
         return true;
@@ -252,7 +320,6 @@ public class Player : MonoBehaviour {
             if (collectible != null) {
                 return true;
             } else {
-                MovementSpeed = Vector2.zero;
                 return false;
             }
         } else {
