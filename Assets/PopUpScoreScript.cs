@@ -29,12 +29,14 @@ public class PopUpScoreScript : MonoBehaviour {
                 break;
         }
 
+
         if (minusScore) {
             text.text = "-" + scorePoints.ToString();
             scorePoints = -scorePoints;
         } else {
             text.text = "+" + scorePoints.ToString();
         }
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().SetNewScore(scorePoints);
         StartCoroutine(waitToDestroy());
     }
 

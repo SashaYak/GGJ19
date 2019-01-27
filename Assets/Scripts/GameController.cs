@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class GameController : MonoBehaviour {
 
@@ -22,6 +23,10 @@ public class GameController : MonoBehaviour {
     public int MaxBalance = 20;
     public int BalanceChangeStart = 5;
     public int BalanceChangeHard = 15;
+
+    public Text ScoreUI;
+    public int CurrentScore;
+    private StudioEventEmitter _emitter;
 
     [SerializeField]
     int balance = 0;
@@ -75,6 +80,7 @@ public class GameController : MonoBehaviour {
     private void Awake() {
         if (Instance == null) {
             Instance = this;
+            _emitter = GetComponent<StudioEventEmitter>();
         } else {
             Destroy(this.gameObject);
         }
@@ -82,6 +88,8 @@ public class GameController : MonoBehaviour {
 
     private void Start() {
         StartLevel(0);
+        _emitter.Play();
+
     }
 
     public void StartLevel(int level) {
@@ -166,5 +174,22 @@ public class GameController : MonoBehaviour {
         float ratio = (currentTimer / maxTimer);
         FillImage.fillAmount = 1 - ratio;
         TimeIndicator.transform.position = ratio * TimeBot.position + (1 - ratio) * TimeTop.position;
+
+        _emitter.SetParameter("DirtLevel", ratio);
+
     }
+
+    public void SetNewScore(int sc)
+    {
+        CurrentScore += sc;
+        ScoreUI.text = CurrentScore.ToString();
+}
+
+    private void OnDisable()
+    {
+        _emitter.Stop();
+    }
+
+
+
 }
