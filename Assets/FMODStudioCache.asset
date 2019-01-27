@@ -11,41 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 114279779581053248}
-  - {fileID: 114891321938095266}
-  - {fileID: 114298104180694134}
-  - {fileID: 114429978344492920}
-  EditorEvents:
-  - {fileID: 114743273157286452}
-  - {fileID: 114570941402975540}
-  - {fileID: 114493566906286690}
-  - {fileID: 114565646381869728}
-  - {fileID: 114195052629043520}
-  - {fileID: 114471761343506658}
-  - {fileID: 114487449887273880}
-  - {fileID: 114286727270163772}
-  - {fileID: 114172674760509786}
-  - {fileID: 114877679489742066}
-  - {fileID: 114266062300440792}
-  - {fileID: 114149176238384274}
-  - {fileID: 114311427423493750}
-  - {fileID: 114815566544407298}
-  - {fileID: 114330440237330016}
-  - {fileID: 114632157508801872}
-  - {fileID: 114345739801167102}
-  - {fileID: 114730713435205118}
-  - {fileID: 114838845784263732}
-  - {fileID: 114987914916661628}
-  - {fileID: 114647577893263356}
-  - {fileID: 114299913530052266}
-  - {fileID: 114806378695473054}
-  - {fileID: 114450907773274062}
-  - {fileID: 114634814639921042}
-  - {fileID: 114871363604512020}
-  MasterBankRef: {fileID: 114891321938095266}
-  StringsBankRef: {fileID: 114279779581053248}
-  stringsBankWriteTime: 636841785825059678
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
   cacheVersion: 2
 --- !u!114 &114004941380579642
 MonoBehaviour:
@@ -385,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636841785825059678
+  lastModified: 636841817728650655
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -406,13 +376,13 @@ MonoBehaviour:
   guid: e75362ffc8d8a44a96ccd7a9b6b5f8fd
   Banks:
   - {fileID: 114298104180694134}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 12416
 --- !u!114 &114298104180694134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,11 +395,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\SFX.bank
-  lastModified: 636841785826924710
+  lastModified: 636841821750000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4214336
+    Value: 4381600
   Exists: 1
 --- !u!114 &114299913530052266
 MonoBehaviour:
@@ -594,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Music.bank
-  lastModified: 636841785825478563
+  lastModified: 636841817729248741
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1249,7 +1219,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 3578
 --- !u!114 &114815566544407298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,7 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\sasho\Google Drive\GGJ19_FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636841785824999835
+  lastModified: 636841817728575339
   LoadResult: 0
   FileSizes:
   - Name: Desktop
